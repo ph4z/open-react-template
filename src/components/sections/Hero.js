@@ -61,11 +61,11 @@ const Hero = ({
         <div className={innerClasses}>
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-              Insolence provide a simple and efficient access to the best of <span className="text-color-primary">DeFi</span>
+              Simple and riskless exposure on <span className="text-color-primary">DeFi</span>
             </h1>
             <div className="container-xs">
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-                Our strategies have a minimal profit of 20% APY by using riskless assets (stablecoins) and delta neutral portfolios.
+                Our strategies have a minimal profit of 20% APY by using stablecoins and delta neutral portfolios.
                 </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
