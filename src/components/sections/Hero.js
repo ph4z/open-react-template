@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
-import Image from '../elements/Image';
-import Modal from '../elements/Modal';
+import Login from '../elements/Login';
+
+import { CHAINS, NETWORKS, AnchorEarn, DENOMS} from '@anchor-protocol/anchor-earn';
 
 const propTypes = {
   ...SectionProps.types
@@ -13,6 +14,7 @@ const propTypes = {
 const defaultProps = {
   ...SectionProps.defaults
 }
+
 
 const Hero = ({
   className,
@@ -24,18 +26,6 @@ const Hero = ({
   invertColor,
   ...props
 }) => {
-
-  const [videoModalActive, setVideomodalactive] = useState(false);
-
-  const openModal = (e) => {
-    e.preventDefault();
-    setVideomodalactive(true);
-  }
-
-  const closeModal = (e) => {
-    e.preventDefault();
-    setVideomodalactive(false);
-  }   
 
   const outerClasses = classNames(
     'hero section center-content',
@@ -52,6 +42,29 @@ const Hero = ({
     bottomDivider && 'has-bottom-divider'
   );
 
+  const [apy, setAPY] = useState([])
+
+  useEffect( () => {
+
+    async function fetchData() {
+      const anchorEarn = new AnchorEarn({
+        chain: CHAINS.TERRA,
+        network: NETWORKS.COLUMBUS_4,
+        address: 'terra1lwpczvhyuuy9hkhumkpmh35gqc8sjjtc8gul6k'
+
+      });
+
+      const marketInfo = await anchorEarn.market({
+        currencies: [DENOMS.UST]
+      });
+
+      const f = parseFloat(marketInfo.markets[0].APY) * 100
+      setAPY(f.toFixed(2).toString() +"% APY");
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <section
       {...props}
@@ -61,45 +74,21 @@ const Hero = ({
         <div className={innerClasses}>
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-              Simple and riskless exposure on <span className="text-color-primary">DeFi</span>
+              Get <span className="text-color-primary">{apy}</span> on your saving
             </h1>
+            <br />
+            <br />
             <div className="container-xs">
-              <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-                Our strategies have a minimal profit of 20% APY by using stablecoins and delta neutral portfolios.
-                </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
-                  <Button tag="a" color="primary" wideMobile href="https://cruip.com/">
-                    Get started
-                    </Button>
-                  <Button tag="a" color="dark" wideMobile href="https://github.com/cruip/open-react-template/">
-                    View on Github
+                  <Button tag="a" color="primary" wideMobile>
+                    Coming soon
                     </Button>
                 </ButtonGroup>
+                <Login></Login>
               </div>
             </div>
           </div>
-          <div className="hero-figure reveal-from-bottom illustration-element-01" data-reveal-value="20px" data-reveal-delay="800">
-            <a
-              data-video="https://player.vimeo.com/video/174002812"
-              href="#0"
-              aria-controls="video-modal"
-              onClick={openModal}
-            >
-              <Image
-                className="has-shadow"
-                src={require('./../../assets/images/video-placeholder.jpg')}
-                alt="Hero"
-                width={896}
-                height={504} />
-            </a>
-          </div>
-          <Modal
-            id="video-modal"
-            show={videoModalActive}
-            handleClose={closeModal}
-            video="https://player.vimeo.com/video/174002812"
-            videoTag="iframe" />
         </div>
       </div>
     </section>

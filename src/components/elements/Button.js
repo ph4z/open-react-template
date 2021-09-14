@@ -9,7 +9,8 @@ const propTypes = {
   loading: PropTypes.bool,
   wide: PropTypes.bool,
   wideMobile: PropTypes.bool,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  onClick: PropTypes.function
 }
 
 const defaultProps = {
@@ -19,7 +20,7 @@ const defaultProps = {
   loading: false,
   wide: false,
   wideMobile: false,
-  disabled: false
+  onClick: false
 }
 
 const Button = ({
@@ -31,6 +32,7 @@ const Button = ({
   wide,
   wideMobile,
   disabled,
+  onClick,
   ...props
 }) => {
 
@@ -50,6 +52,7 @@ const Button = ({
       {...props}
       className={classes}
       disabled={disabled}
+      onClick={onClick}
     />
   );
 }

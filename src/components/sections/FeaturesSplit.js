@@ -50,8 +50,8 @@ const FeaturesSplit = ({
   );
 
   const sectionHeader = {
-    title: 'Workflow that just works',
-    paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
+    title: 'How it works',
+    paragraph: ''
   };
 
   return (
@@ -66,14 +66,11 @@ const FeaturesSplit = ({
 
             <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
-                <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  Lightning fast workflow
-                  </div>
                 <h3 className="mt-0 mb-12">
-                  Data-driven insights
+                  Stablecoins
                   </h3>
                 <p className="m-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  All funds are invested in stablecoins like UST and USDC so user capital is not risk while crypto market is in a downside trend, but you still get returns throuhgt our diffrent investment strategies.
                   </p>
               </div>
               <div className={
@@ -83,23 +80,21 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/features-split-image-01.png')}
+                  src={require('./../../assets/images/stablecoins.png')}
+                  // src={require('./../../assets/images/features-split-image-01.png')}
                   alt="Features split 01"
-                  width={528}
-                  height={396} />
+                  width={240}
+                  height={240} />
               </div>
             </div>
 
             <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-right" data-reveal-container=".split-item">
-                <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  Lightning fast workflow
-                  </div>
                 <h3 className="mt-0 mb-12">
-                  Data-driven insights
+                  Lending & borrowing
                   </h3>
                 <p className="m-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  A strategy example is to lend 100 USDC at 20% APY and then use it as a collateral to borrow 80 USDT at 10%. You would have a 10% reward plus 80 UST that can be used into other strategies or we can just repeat the process.
                   </p>
               </div>
               <div className={
@@ -109,7 +104,8 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/features-split-image-02.png')}
+                  src={require('./../../assets/images/lending-borrowing.png')}
+                  // src={require('./../../assets/images/features-split-image-02.png')}
                   alt="Features split 02"
                   width={528}
                   height={396} />
@@ -118,14 +114,11 @@ const FeaturesSplit = ({
 
             <div className="split-item">
               <div className="split-item-content center-content-mobile reveal-from-left" data-reveal-container=".split-item">
-                <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  Lightning fast workflow
-                  </div>
                 <h3 className="mt-0 mb-12">
-                  Data-driven insights
+                  Delta neutral portolio
                   </h3>
                 <p className="m-0">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua — Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  A delta neutral portfolio is based on a long and a short position on the same asset in order to neutralize the market volatility, but as you provide liquidity to the market you get additional rewards that can be compounded into the initial positions. 
                   </p>
               </div>
               <div className={
@@ -135,7 +128,8 @@ const FeaturesSplit = ({
                 )}
                 data-reveal-container=".split-item">
                 <Image
-                  src={require('./../../assets/images/features-split-image-03.png')}
+                  src={require('./../../assets/images/delta-neutral.webp')}
+                  // src={require('./../../assets/images/features-split-image-03.png')}
                   alt="Features split 03"
                   width={528}
                   height={396} />
