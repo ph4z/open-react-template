@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
 import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
-import Login from '../elements/Login';
 
 import { CHAINS, NETWORKS, AnchorEarn, DENOMS} from '@anchor-protocol/anchor-earn';
 
@@ -85,7 +84,6 @@ const Hero = ({
                     Coming soon
                     </Button>
                 </ButtonGroup>
-                <Login></Login>
               </div>
             </div>
           </div>
